@@ -1,0 +1,26 @@
+`timescale 1ns/1ps
+
+module SR FF TB;
+  reg S, R, CLK;
+  wire Q, QB;
+
+  
+  srff uut ( .S(S), .R(R), .CLK(CLK), .Q(Q), .QB(QB));
+  initial begin
+    CLK = 0;
+    forever #5 CLK = ~CLK; 
+  end
+  initial begin
+    $monitor("Time=%0t | S=%b R=%b CLK=%b | Q=%b QB=%b", 
+              $time, S, R, CLK, Q, QB);
+    S = 0; R = 0; #10;
+    S = 1; R = 0; #10;
+    S = 0; R = 1; #10;
+    S = 0; R = 0; #10;
+    S = 1; R = 1; #10;
+    S = 0; R = 0; #10;
+
+    $finish;
+  end
+endmodule
+
