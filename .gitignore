@@ -1,34 +1,68 @@
-# Gradle files
-.gradle/
-build/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
-*.log
-
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.aab
-*.apk
-output-metadata.json
-
-# IntelliJ
-*.iml
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
 .idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
 
-# Keystore files
-*.jks
-*.keystore
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
+# ModelSim / QuestaSim
+work/
+transcript
+vsim.wlf
+*.wlf
+*.vstf
+modelsim.ini
+*.cr.mti
+*.mpf
 
-# Android Profiling
-*.hprof
+# Vivado / XSIM
+xsim.dir/
+*.jou
+*.log
+*.pb
+*.str
+*.rpt
+*.wdb
+*.xci
+*.cache
+*.hw
+*.runs
+*.sdk
+*.ip_user_files
+*.sim
+*.srcs
+*.gen
+*.download_bitstream
+*.debug
+*.bit
+*.ltx
+
+# Quartus / Intel tools
+db/
+incremental_db/
+output_files/
+*.qpf
+*.qsf
+*.qws
+*.sof
+*.pof
+*.rpt
+
+# Verilog/generic generated files
+*.vcd
+*.sv
+*.out
+*.hex
+*.mem
+*.bin
+
+# Python / build leftovers (optional)
+__pycache__/
+*.pyc
