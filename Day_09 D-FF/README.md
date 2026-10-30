@@ -1,39 +1,49 @@
-D Flip-Flop (DFF) — Overview
-Definition
-A D Flip-Flop (Data Flip-Flop) is a sequential logic circuit that stores one bit of data.
+# Day 09: D Flip-Flop (D-FF)
 
-It captures the input D at the rising edge (or falling edge) of the clock and holds it until the next clock edge.
+## Overview
+A D Flip-Flop (DFF) is a fundamental sequential logic circuit that stores one bit of data. It captures the value of the `D` input at the active clock edge and holds it until the next clock event.
 
-It’s the fundamental building block for registers, counters, and memory elements.
+It is one of the basic building blocks used in:
+- registers
+- counters
+- memory elements
+- sequential circuits
+- state machines
 
-Inputs & Outputs
-Inputs:
+## Inputs and Outputs
 
-D → Data input
+### Inputs
+- `D` — Data input
+- `CLK` — Clock signal
+- `RST` — Reset signal
 
-CLK → Clock signal
+### Outputs
+- `Q` — Stored data output
+- `QB` — Complement of `Q`
 
-RST → Reset (forces output to 0)
+## Working Principle
+On each rising edge of the clock (`posedge CLK`):
 
-Outputs:
+- If `RST = 1`, then `Q = 0`
+- Else, `Q = D`
 
-Q → Stored data
+The complementary output is always:
 
-QB → Complement of Q
+- `QB = ~Q`
 
-Working Principle
-On each posedge CLK:
+This means the flip-flop updates its state synchronously with the clock and retains the value between clock pulses.
 
-If RST = 1 → Q = 0
+## Behavior Summary
+- `RST = 1` → output resets to `0`
+- `RST = 0` and clock edge occurs → output takes the value of `D`
+- No clock edge → output remains unchanged
 
-Else → Q = D
+## Simulation
+Run the design in ModelSim or Vivado to verify the behavior.
 
-QB always mirrors the complement of Q.
+![Simulation](https://github.com/user-attachments/assets/0b20ed23-e79c-4425-b0ba-4597d068ac9f)
 
+![Waveform Result](https://github.com/user-attachments/assets/985b0247-5478-431f-b730-5d0f64ebd740)
 
-<img width="826" height="539" alt=Simulation
-Run in ModelSim/Vivado:
-
-<img width="859" height="475" alt="image" src="https://github.com/user-attachments/assets/0b20ed23-e79c-4425-b0ba-4597d068ac9f" />
-<img width="1299" height="798" alt="image" src="https://github.com/user-attachments/assets/985b0247-5478-431f-b730-5d0f64ebd740" />
-
+## Conclusion
+The D Flip-Flop is a core element in digital design. It provides a reliable way to store a single bit of data and synchronize updates with a clock signal, making it essential for modern sequential logic systems.
